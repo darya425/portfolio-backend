@@ -5,13 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-app.use(
-  cors({
-    origin: "https://darya-kuliashova-portfolio.netlify.app",
-    methods: "GET,POST",
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
