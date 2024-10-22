@@ -17,6 +17,7 @@ oauth2Client.setCredentials({
 });
 
 const app = express();
+
 app.use(
   cors({
     origin: "https://darya-kuliashova-portfolio-backend.netlify.app",
@@ -24,7 +25,24 @@ app.use(
     credentials: true,
   })
 );
+
 app.use(bodyParser.json());
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.get("/send-emails", (req, res) => {
+  res.send("Test route works!");
+});
+
+app.get("/routes", (req, res) => {
+  res.send([
+    { method: "GET", path: "/" },
+    { method: "GET", path: "/send-email" },
+    { method: "POST", path: "/send-email" },
+  ]);
+});
 
 app.post("/send-email", async (req, res) => {
   const { firstname, lastname, email, phone, message } = req.body;
