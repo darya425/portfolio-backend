@@ -20,7 +20,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://darya-kuliashova-portfolio-backend.netlify.app",
+    origin: "https://darya-kuliashova-backend-080563d8bd75.herokuapp.com",
     methods: "GET,POST",
     credentials: true,
   })
