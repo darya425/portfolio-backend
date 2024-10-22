@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/send-emails", (req, res) => {
+app.get("/send-email", (req, res) => {
   res.send("Test route works!");
 });
 
@@ -82,8 +82,8 @@ app.post("/send-email", async (req, res) => {
     console.log("Email sent: " + info.response);
     res.status(200).send("Email sent successfully");
   } catch (error) {
-    console.error("Error sending email:", error);
-    res.status(500).send("Error sending email");
+    console.error("Error sending email:", error.message);
+    res.status(500).send("Error sending email: " + error.message);
   }
 });
 
