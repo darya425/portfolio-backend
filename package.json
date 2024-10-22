@@ -4,14 +4,15 @@
   "description": "Backend for sending emails using Nodemailer and Express",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "googleapis": "^144.0.0",
     "nodemailer": "^6.9.15"
   },
   "devDependencies": {
